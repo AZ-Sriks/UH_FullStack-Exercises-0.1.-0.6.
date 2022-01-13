@@ -1,0 +1,27 @@
+title Srik_SPA NewNote Web Sequence
+
+Browser -> Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note left of Browser: Browser sends post request to server
+note right of Server: 
+Response code 201 
+Server does not redirect, stays on page
+end note
+
+note left of Browser: Browser loads css
+Browser -> Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+note left of Browser: Browser executes js code
+Browser -> Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+
+
+note over Browser:
+Browser starts executing js-code
+that requests JSON data from server 
+end note
+
+Browser -> Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server  -> Browser: [{ content: "c","date":"2022-01-13T01:30:36.902Z" }, ...]
+
+note over Browser:
+browser executes the event handler
+that renders notes to display
+end note
