@@ -1,0 +1,24 @@
+title Srik_NewNote Web Sequence
+
+Browser -> Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+note left of Browser: Browser sends post request to server
+note right of Server: Response code 302 
+Server -> Browser: URL redirect to notes page
+note left of Browser: Browser loads notes page from the HTML code
+Browser -> Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+note left of Browser: Browser loads css
+Browser -> Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+note left of Browser: Browser executes js code
+Browser -> Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+note left of Browser 
+browser starts executing js-code
+that requests JSON data from server 
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: [...{"content":"Srik_Test2","date":"2022-01-13T12:06:41.569Z"}]
+
+note over Browser:
+browser executes the event handler
+that renders notes to display
+end note
