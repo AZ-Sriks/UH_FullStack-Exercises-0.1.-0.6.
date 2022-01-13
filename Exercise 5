@@ -1,0 +1,21 @@
+title Excercise 5 - Srik_SPA Load
+
+Browser -> Server: https://studies.cs.helsinki.fi/exampleapp/spa
+Server  -> Browser: HTML-code
+Browser -> Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server  -> Browser: main.css
+Browser -> Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+Server  -> Browser: spa.js
+
+note over Browser:
+Browser starts executing js-code
+that requests JSON data from server 
+end note
+
+Browser -> Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server  -> Browser: [{ content: "c","date":"2022-01-13T01:30:36.902Z" }, ...]
+
+note over Browser:
+browser executes the event handler
+that renders notes to display
+end note
